@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float runSpeed;
     private float speed;
     private Vector3 movementDirection;
+    private float verticalVelocity;
 
     [Header("Aim Bilgisi")]
     [SerializeField] private Transform aim;
@@ -56,11 +57,23 @@ public class PlayerMovement : MonoBehaviour
     private void ApplyMovement()
     {
         movementDirection = new Vector3(moveInput.x, 0f, moveInput.y);
+        ApplyGravity();
 
         if (movementDirection.magnitude > 0)
         {
             characterController.Move(movementDirection * Time.deltaTime * speed);
         }
+    }
+
+    private void ApplyGravity()
+    {
+        if (characterController.isGrounded == false)
+        {
+            verticalVelocity -= 9.81f * Time.deltaTime;
+            movementDirection.y = verticalVelocity;
+        }
+        else
+            verticalVelocity = -0.5f;
     }
 
     private void AssignInputEvents()
