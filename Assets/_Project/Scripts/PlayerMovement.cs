@@ -92,6 +92,7 @@ public class PlayerMovement : MonoBehaviour
             verticalVelocity = -0.5f;
     }
 
+    #region New Input System
     private void AssignInputEvents()
     {
         playerActions = new InputSystem_Actions();
@@ -124,4 +125,5 @@ public class PlayerMovement : MonoBehaviour
     {
         playerActions.Disable();
     }
+    #endregion
 }
