@@ -1,0 +1,58 @@
+# Unity generated folders
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+/[Mm]emoryCaptures/
+/[Rr]ecordings/
+
+# Önemli: .meta dosyalarını *dahil* edin! (Asset meta verileri, Unity için gereklidir)
+!/[Aa]ssets/**/*.meta
+
+# Visual Studio / IDE cache klasörleri
+.vs/
+.vscode/
+.idea/
+.gradle/
+
+# Otomatik oluşturulan proje ve derleme dosyaları
+ExportedObj/
+.consulo/
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+# Unity3D tarafından üretilen meta dosyaları
+*.pidb.meta
+*.pdb.meta
+*.mdb.meta
+
+# Çökme raporları
+sysinfo.txt
+
+# Derleme çıktıları
+*.apk
+*.unitypackage
+*.aab
+*.app
+
+# Crashlytics tarafından üretilen dosyalar
+crashlytics-build.properties
+
+# OS ve diğer gereksiz dosyalar
+.DS_Store
+Thumbs.db
