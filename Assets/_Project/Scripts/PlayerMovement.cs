@@ -4,6 +4,7 @@ public class PlayerMovement : MonoBehaviour
 {
     private InputSystem_Actions playerActions;
     private CharacterController characterController;
+    private Animator animator;
 
     [Header("Hareket Bilgisi")]
     [SerializeField] private float walkSpeed;
@@ -11,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     private float speed;
     private Vector3 movementDirection;
     private float verticalVelocity;
+    private bool isRunning;
 
     [Header("Aim Bilgisi")]
     [SerializeField] private Transform aim;
@@ -28,6 +30,7 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         characterController = GetComponent<CharacterController>();
+        animator = GetComponentInChildren<Animator>();
 
         speed = walkSpeed;
     }
@@ -36,6 +39,19 @@ public class PlayerMovement : MonoBehaviour
     {
         ApplyMovement();
         AimTowardsMouse();
+        AnimatorControllers();
+    }
+
+    private void AnimatorControllers()
+    {
+        float xVelocity = Vector3.Dot(movementDirection.normalized, transform.right);
+        float zVelocity = Vector3.Dot(movementDirection.normalized, transform.forward);
+
+        animator.SetFloat("xVelocity", xVelocity, 0.1f, Time.deltaTime);
+        animator.SetFloat("zVelocity", zVelocity, 0.1f, Time.deltaTime);
+
+        bool playRunAnimation = isRunning && movementDirection.magnitude > 0;
+        animator.SetBool("isRunning", playRunAnimation);
     }
 
     private void AimTowardsMouse()
@@ -85,6 +101,18 @@ public class PlayerMovement : MonoBehaviour
 
         playerActions.Player.Look.performed += context => aimInput = context.ReadValue<Vector2>();
         playerActions.Player.Look.canceled += context => aimInput = Vector2.zero;
+
+        playerActions.Player.Sprint.performed += context =>
+        {
+            speed = runSpeed;
+            isRunning = true;
+        };
+
+        playerActions.Player.Sprint.canceled += context =>
+        {
+            speed = walkSpeed;
+            isRunning = false;
+        };
     }
 
     private void OnEnable()
