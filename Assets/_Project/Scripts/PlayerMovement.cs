@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    private Player player;
+
     private InputSystem_Actions playerActions;
     private CharacterController characterController;
     private Animator animator;
@@ -22,17 +24,16 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 moveInput;
     private Vector2 aimInput;
 
-    private void Awake()
-    {
-        AssignInputEvents();
-    }
-
     private void Start()
     {
+        player = GetComponent<Player>();
+
         characterController = GetComponent<CharacterController>();
         animator = GetComponentInChildren<Animator>();
 
         speed = walkSpeed;
+
+        AssignInputEvents();
     }
 
     private void Update()
@@ -97,12 +98,9 @@ public class PlayerMovement : MonoBehaviour
             verticalVelocity = -0.5f;
     }
 
-    #region New Input System
     private void AssignInputEvents()
     {
-        playerActions = new InputSystem_Actions();
-
-        playerActions.Player.Fire.performed += context => Shoot();
+        playerActions = player.playerActions;
 
         playerActions.Player.Move.performed += context => moveInput = context.ReadValue<Vector2>();
         playerActions.Player.Move.canceled += context => moveInput = Vector2.zero;
@@ -122,15 +120,4 @@ public class PlayerMovement : MonoBehaviour
             isRunning = false;
         };
     }
-
-    private void OnEnable()
-    {
-        playerActions.Enable();
-    }
-
-    private void OnDisable()
-    {
-        playerActions.Disable();
-    }
-    #endregion
 }
