@@ -1911,6 +1911,52 @@ MonoBehaviour:
   weaponRifle: {fileID: 1340577563}
   weaponShotgun: {fileID: 29961760}
   weaponSniper: {fileID: 497981457}
+--- !u!1 &1452256600
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1452256601}
+  - component: {fileID: 1452256602}
+  m_Layer: 0
+  m_Name: Rig 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1452256601
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1452256600}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4101911396286742825}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1452256602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1452256600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70b342d8ce5c2fd48b8fa3147d48d1d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Weight: 1
+  m_Effectors: []
 --- !u!1 &1627207540
 GameObject:
   m_ObjectHideFlags: 0
@@ -3134,6 +3180,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4101911396286742825}
   - component: {fileID: 7929931271695866707}
+  - component: {fileID: 7929931271695866709}
+  - component: {fileID: 7929931271695866708}
   m_Layer: 0
   m_Name: Root
   m_TagString: Untagged
@@ -3285,6 +3333,7 @@ Transform:
   m_Children:
   - {fileID: 8411800935604560317}
   - {fileID: 8437258509118555886}
+  - {fileID: 1452256601}
   m_Father: {fileID: 1014798343}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4211632783897753261
@@ -4106,6 +4155,70 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7929931271695866708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3722007397334260627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2d8418b0b9634b1892b0268dd9c2743, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boneShape: 1
+  drawBones: 1
+  drawTripods: 0
+  boneSize: 1
+  tripodSize: 1
+  boneColor: {r: 0, g: 0, b: 1, a: 0.5}
+  m_Transforms:
+  - {fileID: 7303210237418517249}
+  - {fileID: 3247544932779257134}
+  - {fileID: 6462968626970564667}
+  - {fileID: 8015276120441386490}
+  - {fileID: 2229310970307061302}
+  - {fileID: 4211632783897753261}
+  - {fileID: 7280673958552795856}
+  - {fileID: 6726969425764949855}
+  - {fileID: 2081291100042369217}
+  - {fileID: 6654333805088833567}
+  - {fileID: 2305493840845306099}
+  - {fileID: 7415967246594086508}
+  - {fileID: 6125976559911520906}
+  - {fileID: 6447271842244688121}
+  - {fileID: 5636582298014029442}
+  - {fileID: 8314920450389387288}
+  - {fileID: 3969750141657907390}
+  - {fileID: 1666312537014153322}
+  - {fileID: 8411800935604560317}
+  - {fileID: 8130195473920709166}
+  - {fileID: 7962496467133354922}
+  - {fileID: 5177230266280859460}
+  - {fileID: 3443562419280266950}
+  - {fileID: 7792328087940692423}
+  - {fileID: 2086588547603714922}
+  - {fileID: 2797860279253915914}
+  - {fileID: 5639362692639678564}
+  - {fileID: 903521965257105097}
+  - {fileID: 8780661366032379264}
+--- !u!114 &7929931271695866709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3722007397334260627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fff0960ef4ea6e04eac66b4a7fd2189d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RigLayers:
+  - m_Rig: {fileID: 1452256602}
+    m_Active: 1
+  m_Effectors: []
 --- !u!4 &7962496467133354922
 Transform:
   m_ObjectHideFlags: 0
