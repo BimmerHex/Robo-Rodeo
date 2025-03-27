@@ -21,7 +21,7 @@ public class WeaponVisualController : MonoBehaviour
     {
         SwitchOnWeapon(weaponPistol);
 
-        anim = GetComponentInParent<Animator>();
+        anim = GetComponentInChildren<Animator>();
     }
 
     private void Update()
