@@ -8,7 +8,7 @@ public class PlayerWeaponController : MonoBehaviour
     {
         player = GetComponent<Player>();
 
-        player.playerActions.Player.Fire.performed += context => Shoot();
+        player.actions.Player.Fire.performed += context => Shoot();
     }
 
     private void Shoot()
