@@ -2,22 +2,22 @@ using UnityEngine;
 
 public class PlayerAnimationEvents : MonoBehaviour
 {
-    private WeaponVisualController weaponVisualController;
+    private PlayerWeaponVisuals weaponVisualController;
 
     private void Start()
     {
-        weaponVisualController = GetComponentInParent<WeaponVisualController>();
+        weaponVisualController = GetComponentInParent<PlayerWeaponVisuals>();
     }
     
     public void ReloadIsOver()
     {
-        weaponVisualController.ReturnRigWeightToOne();
+        weaponVisualController.MaximizeRigWeight();
     }
 
     public void ReturnRig()
     {
-        weaponVisualController.ReturnRigWeightToOne();
-        weaponVisualController.ReturnWeightToLeftHandIK();
+        weaponVisualController.MaximizeRigWeight();
+        weaponVisualController.MaximizeLeftHandWeight();
     }
 
     public void WeaponGrabIsOver()

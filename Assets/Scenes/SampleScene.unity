@@ -1950,10 +1950,10 @@ MonoBehaviour:
   weaponRifle: {fileID: 1340577563}
   weaponShotgun: {fileID: 29961760}
   weaponSniper: {fileID: 497981457}
-  rightIncreaseStep: 2.75
+  rigWeightIncreaseRate: 2.75
+  leftHandIkWeightIncreaseRate: 2.5
   leftHandIK: {fileID: 1912692746}
   lefHandIK_Target: {fileID: 528960002}
-  leftHandIK_IncreaseStep: 2.5
 --- !u!1 &1080453898
 GameObject:
   m_ObjectHideFlags: 0
